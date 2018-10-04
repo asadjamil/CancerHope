@@ -1,0 +1,31 @@
+-> remove all pop ups(Done)
+Edit 
+Disable fields on Patient Vital 
+fields First Name and Last Name 
+(Done) 
+->Comment on diagnosis not updated
+->Complementary no side effect name in table 
+-> general comments is not working in demographics(Done)
+-> show alert on pop 
+-> change 
+->readonly comments
+-> remove dob check(Done)
+-> edit show
+-> use empty drop down
+->check sex on demographics(Done)
+-> if Yes on alert then hide
+
+
+
+if(EditFlag)
+                            {
+                               
+                                var answer = confirm("Save data?")
+                                if (answer){
+
+-> Patient 
+disable radio btn 
+disable relation referral drop down(Down)
+hide add buttons
+->Diagnosis & Treatment :
+hide delete buttons and add golden buttons

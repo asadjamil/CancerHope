@@ -1,0 +1,26 @@
+Changes in patientinfo.js
+updateDiagnosis()
+viewDiagnosis()
+ToDo List:
+1- Load Zlu Data after Edit
+Changes made
+Create function.js and add all Zlu related functions
+Include function.js in main
+Call the Zlu functions after Demographics Update Click as
+LoadZluCurrentCancerStages();
+                LoadZluBodyPart();
+                LoadZluSideEffects();
+                LoadZluOtherHealth();
+                LoadZluOtherSupportDrug();
+                LoadZluRadiation();
+                LoadZluSurgery();
+                LoadZluComplementary();
+
+2- Update TreatmentSideEffects flags
+3- Psycho
+4- Update Set Search
+5- Update P2C
+
+Dynamic Query link
+http://stackoverflow.com/questions/15794179/create-a-dynamic-mysql-query-using-php-variables
+

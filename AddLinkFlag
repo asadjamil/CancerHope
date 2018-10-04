@@ -1,0 +1,63 @@
+<?php
+	require('connection.php');
+	session_start();
+    
+	$page = isset($_POST['p'])?$_POST['p']:'';
+	if($page == 'add'){
+		$cid = $_POST['cid'];
+		$pid = $_POST['pid'];
+		$LinkFlag = $_POST['LinkFlag'];
+		// By default
+		//$BaseRecord = 1;
+		//$PrimaryBaseRecord = 1;
+		$Initiate = 1;
+		// get dateToday
+		$timezone  = 4; //(GMT 4:00) EST (Pak) 
+		$InitiateDateTime = gmdate("Y-m-j  H:i", time() + 3600*($timezone+date("I")));
+		$LockedBy = $_SESSION["username"];
+		$InitiatePSC = $LockedBy;
+		// Match = 1 because Match Click
+		
+		$MatchDateTime = $InitiateDateTime;
+		$MatchPSC = $LockedBy;
+		// For Match Click Link = 0 and LinkDateTime = 0
+		//$Link = 0;
+		//$LinkDateTime = NULL;
+		$query = "SELECT tblpatient2counsel.CounselID AS CID, tblpatient2counsel.PatientID AS PID
+				 	FROM tblpatient2counsel WHERE tblpatient2counsel.CounselID ='$cid' AND tblpatient2counsel.PatientID='$pid' ";
+		$result = mysqli_query($conn,$query);
+		//$row = mysqli_fetch_assoc($result);
+		$rows = mysqli_num_rows($result);
+		//echo $rows;
+		if($rows == 0)
+		{
+			$query3 = "INSERT INTO tblpatient2counsel(PatientID,CounselID,Initiate,InitiateDateTime,InitiatePSC,`Match`,MatchDateTime,MatchPSC,LockedBy) 
+				VALUES('$pid','$cid','$Initiate','$InitiateDateTime','$InitiatePSC','$Match','$MatchDateTime','$MatchPSC',
+					'$LockedBy')";
+			//echo $query3;		
+			$result3 = mysqli_query($conn,$query3);
+		}
+		else
+		{
+			$query3 = "UPDATE tblpatient2counsel SET `Match` = '$Match' WHERE tblpatient2counsel.CounselID ='$cid' AND tblpatient2counsel.PatientID='$pid' ";
+			//echo $query3;
+			$result3 = mysqli_query($conn,$query3);
+		}
+			
+	}
+	// Need to be done later
+	/*elseif($page == 'edit'){
+		$date = $_POST['date'];
+		$stage = $_POST['stage'];
+		$cancer = $_POST['cancer'];
+		$id = $_POST['id'];
+		$query3 = "UPDATE crud SET CancerID='$cancer',email='$email',phone='$phone',address='$address' WHERE id='$id' ";
+		$result3 = mysqli_query($conn,$query3);
+	}*/
+	elseif ($page == 'del') {
+		$id = $_POST['id'];
+		$query4 = "DELETE FROM tblpatient2counsel WHERE id = '$id' ";
+		$result4 = mysqli_query($conn,$query4);
+	}
+	
+?>

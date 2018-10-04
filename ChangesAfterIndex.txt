@@ -1,0 +1,2 @@
+changes After index
+Making Search Common or generic by passing PatientTypeID in ajax hit to search

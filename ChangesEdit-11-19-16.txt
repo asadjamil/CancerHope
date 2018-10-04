@@ -1,0 +1,5 @@
+Change the Table attribute 
+for tblchemotherapy,tblotherdrugs,tblradiation,tblsurgery,tblspecial,tblcomplemantary add SideEffectID as sideEffects tables are not linked so denormalize table for simplicity
+
+EDIt
+call funfions are not bbc

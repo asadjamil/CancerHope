@@ -1,0 +1,5 @@
+Options are set in their respective tables like tbldiagnosis
+setsearchoption table is set on options
+
+SetSearchOption linked with Match Information
+ 

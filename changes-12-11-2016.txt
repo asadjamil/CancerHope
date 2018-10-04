@@ -1,0 +1,12 @@
+Changes in match form 
+1- Create a new row in search criteria give id above search criteria and hide below search criteria div 
+Initialized,Date time, Login name
+// decide text
+On new btn:
+* populate search criteria flags 
+* enter base record display in p2c
+
+2- on patient demographics btn load patient demo on basis of id selected
+3 - on search match btn load data in table 
+4 - on "i" btn load its demographics
+

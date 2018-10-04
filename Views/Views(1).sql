@@ -1,0 +1,24 @@
+CREATE VIEW baseview1 AS 
+	SELECT tblInformation.PatientID AS dPID, tblInformation.PatientTypeID AS dPTID, tblInformation.FirstName AS dNAME, tblInformation.SupportPersonStatusID AS dSPSID, tblInformation.Age AS dAGE,tblInformation.RelationID ,tblInformation.Gender, tblDiagnosis.PatientID AS diPID, tblDiagnosis.CancerFlag AS diCF, tblDiagnosis.MetastasisFlag AS diMF, tblDiagnosis.CancerHistoryFlag AS diCHF, tblDiagnosis.CancerRecurranceFlag AS diCRF,tblDiagnosis.OtherHealthProblemsSelected AS diOHPF, tblTreatmentSideEffects.PatientID AS tPID, tblTreatmentSideEffects.ChemotherapySelected AS tCS, tblTreatmentSideEffects.ChemotherapySESelected AS tCSEs, tblTreatmentSideEffects.OtherDrugsSelected AS tODS, tblTreatmentSideEffects.OtherDrugsSESelected AS tODSEs, tblTreatmentSideEffects.RadiationSelected AS tRS, tblTreatmentSideEffects.RadiationSESelected AS tRSEs, tblTreatmentSideEffects.SurgerySelected AS tSS, tblTreatmentSideEffects.SurgerySESelected AS tSSEs, tblTreatmentSideEffects.SpecialSelected AS tSpS, tblTreatmentSideEffects.SpecialSESelected AS tSpSEs,tblTreatmentSideEffects.ComplementarySelected AS tCmpS, tblTreatmentSideEffects.ComplementarySESelected AS tCmpSEs, tblPsychosocialIssues.PatientID AS pPID, tblPsychosocialIssues.LanguageSelected AS pLS, tblPsychosocialIssues.PrimaryLanguageID AS pPLID, tblPsychosocialIssues.MaritalStatusID AS pMSID, tblPsychosocialIssues.ChildrenSelected AS pCS, tblPsychosocialIssues.WorkFlag AS pWF, tblPsychosocialIssues.RaceID AS pRID, tblPsychosocialIssues.ReligionID AS pRLID, tblPsychosocialIssues.Face2FaceFlag AS pFFF 
+	FROM tblInformation, tblDiagnosis, tblTreatmentSideEffects, tblPsychosocialIssues 
+	WHERE tblInformation.PatientTypeID = 2 
+	AND tblInformation.SupportPersonStatusID = 1 
+	AND tblDiagnosis.PatientID = tblInformation.PatientID
+	AND tblTreatmentSideEffects.PatientID = tblDiagnosis.PatientID
+	AND tblPsychosocialIssues.PatientID = tblTreatmentSideEffects.PatientID
+
+CREATE VIEW baseview3 AS 
+	SELECT tblInformation.PatientID AS dPID, tblInformation.PatientTypeID AS dPTID, tblInformation.FirstName AS dNAME, tblInformation.SupportPersonStatusID AS dSPSID, tblInformation.Age AS dAGE,tblInformation.RelationID ,tblInformation.Gender, tblDiagnosis.PatientID AS diPID, tblDiagnosis.CancerFlag AS diCF, tblDiagnosis.MetastasisFlag AS diMF, tblDiagnosis.CancerHistoryFlag AS diCHF, tblDiagnosis.CancerRecurranceFlag AS diCRF,tblDiagnosis.OtherHealthProblemsSelected AS diOHPF, tblTreatmentSideEffects.PatientID AS tPID, tblTreatmentSideEffects.ChemotherapySelected AS tCS, tblTreatmentSideEffects.ChemotherapySESelected AS tCSEs, tblTreatmentSideEffects.OtherDrugsSelected AS tODS, tblTreatmentSideEffects.OtherDrugsSESelected AS tODSEs, tblTreatmentSideEffects.RadiationSelected AS tRS, tblTreatmentSideEffects.RadiationSESelected AS tRSEs, tblTreatmentSideEffects.SurgerySelected AS tSS, tblTreatmentSideEffects.SurgerySESelected AS tSSEs, tblTreatmentSideEffects.SpecialSelected AS tSpS, tblTreatmentSideEffects.SpecialSESelected AS tSpSEs,tblTreatmentSideEffects.ComplementarySelected AS tCmpS, tblTreatmentSideEffects.ComplementarySESelected AS tCmpSEs, tblPsychosocialIssues.PatientID AS pPID, tblPsychosocialIssues.LanguageSelected AS pLS, tblPsychosocialIssues.PrimaryLanguageID AS pPLID, tblPsychosocialIssues.MaritalStatusID AS pMSID, tblPsychosocialIssues.ChildrenSelected AS pCS, tblPsychosocialIssues.WorkFlag AS pWF, tblPsychosocialIssues.RaceID AS pRID, tblPsychosocialIssues.ReligionID AS pRLID, tblPsychosocialIssues.Face2FaceFlag AS pFFF 
+	FROM tblInformation, tblDiagnosis, tblTreatmentSideEffects, tblPsychosocialIssues 
+	WHERE tblInformation.PatientTypeID = 3 
+	AND tblInformation.SupportPersonStatusID = 1 
+	AND tblDiagnosis.PatientID = tblInformation.PatientID
+	AND tblTreatmentSideEffects.PatientID = tblDiagnosis.PatientID
+	AND tblPsychosocialIssues.PatientID = tblTreatmentSideEffects.PatientID
+
+CREATE VIEW baseview4 AS 
+	SELECT tblInformation.PatientID AS dPID, tblInformation.PatientTypeID AS dPTID, tblInformation.FirstName AS dNAME, tblInformation.SupportPersonStatusID AS dSPSID, tblInformation.Age AS dAGE,tblInformation.RelationID ,tblInformation.Gender, tblPsychosocialIssues.PatientID AS pPID, tblPsychosocialIssues.LanguageSelected AS pLS, tblPsychosocialIssues.PrimaryLanguageID AS pPLID, tblPsychosocialIssues.MaritalStatusID AS pMSID, tblPsychosocialIssues.ChildrenSelected AS pCS, tblPsychosocialIssues.WorkFlag AS pWF, tblPsychosocialIssues.RaceID AS pRID, tblPsychosocialIssues.ReligionID AS pRLID, tblPsychosocialIssues.Face2FaceFlag AS pFFF 
+	FROM tblInformation,tblPsychosocialIssues 
+	WHERE tblInformation.PatientTypeID = 4 
+	AND tblInformation.SupportPersonStatusID = 1 
+	AND tblPsychosocialIssues.PatientID =  tblInformation.PatientID

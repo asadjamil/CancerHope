@@ -1,0 +1,5 @@
+1- on search check if p2c has record against pid
+if no then add base entry in p2c screen 1 set flags also in p2c
+2- on New btn show search criteria filled against pid
+entry in p2c with primarybase = 1 and initiate = 0 see fig 4 
+3- no del if baserecord =1 && primary =1 

@@ -1,0 +1,6 @@
+Changes for DeleteBtn
+1- Add Delete button in html near search 
+2- Hide delbtn before li (view) and show after li select then check click in view and call deletePatient();
+3- add deletePatient in js
+4- add DeletePatientResponse.php
+ 

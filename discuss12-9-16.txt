@@ -1,0 +1,6 @@
+Discuss?
+Current Cancer Stage Flag is left
+in diagnosis
+Radiation BodyPart flag is left
+how to set yes and no in treatment? 
+if value is not selected from demographics means unknown then query shows no data 
